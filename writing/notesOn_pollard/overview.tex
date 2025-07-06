@@ -1,0 +1,33 @@
+%% %% -- --
+
+What follows is an overview of Pollard's definition, as found in \cite{pollard-fftFiniteFields-1971}, of the Fourier transform for finite fields.
+
+\bigskip
+
+Let $GF(p^n)$, or $F$ for short, be the Galois field with $p^n$ elements, where $p$ is a prime number and $n$ is a positive integer. Let $d$ be a divisor of $p^n - 1$, and let $r$ be an element of order $d$ in $F^*$. Then, if $(a_i)$ is a sequence in $F$ of length $d$, we define its \emph{Fourier transform} via the rule
+
+\begin{equation}\label{ft-ff}
+	A_i = \sum_{j=0}^{d-1} a_j r^{ij}.
+\end{equation}
+
+It has the following ``convolution property'': if the sequences $(a_i), \ (b_i)$ and $(c_i)$ are such that their transforms $(A_i), \ (B_i)$ and $(C_i)$ satisfy
+
+\begin{equation}\label{eq-ABC}
+	C_i = A_i B_i
+\end{equation}
+
+then
+
+\begin{equation}\label{ff-convol}
+	c_i = \sum_{j=0}^{d-1} a_j b_{i-j},
+\end{equation}
+
+where the indices for the terms $b_t$ are taken modulo $d$.
+
+\bigskip
+
+In equation \eqref{ff-convol} we see $(c_i)$ as the ``convolution'' of $(a_i)$ and $(b_i)$, which allows us to rephrase the relationship between equations \eqref{eq-ABC} and \eqref{ff-convol} as follows:
+
+\begin{lem}[Informal convolution statement]
+	To compute the convolution of two sequences, one may first transform them, then compute their point-wise product, and then apply the reverse transform.
+\end{lem}
