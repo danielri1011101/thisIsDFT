@@ -1,16 +1,3 @@
-\documentclass{amsart}
-
-\input{preambleGen}
-
-\title{Notes on the 2017 \emph{kyber} KEM specification}
-\author{Daniel R. Barrero R.}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-
-\section{}
 
 Let
 
@@ -59,43 +46,3 @@ where DFT denotes the discrete Fourier transform\footnote{Also called
 \emph{number-theoretic transform} and denoted NTT in the cryptography
 context.} over $\ZZ_{7681}$ and ``\begin{math} \circ \end{math}'' denotes
 the pointwise product of sequences.
-
-\section{Comments}
-
-\subsection{} First create a ``CPA-secure'' public-key encryption scheme
-and then apply the Fujisaki-Okamoto transform to obtain a ``CCA-secure''
-key exchange mechanism (KEM).
-
-% % - - Find out what each of these kinds of security mean.
-
-\subsection{} Kyber's security is not \emph{exactly} based on M-LWE's
-hardness assumptions. See section 3 of
-\cite{crystalsAuthors-kyber-2017}.
-
-\subsection{} Choosing Module- over Ring-LWE increases safety against
-certain quantum solutions to ideal lattice problems over number fields, cf.
-\cite{biasseSong-16}.
-
-\subsection{}\label{hoo} For communications based on 256-bit messages,
-rings of dimension 256 suffice for cryptographic protocols. The ring $R_q$
-
-% % - - How is the ring's dimension computed?
-
- has dimension 256 as an $F-$vector space.
-
-\subsection{} The number 7681 was chosen as the smallest prime $q$ that
-satisfies
-
-\begin{equation}\label{cond-fieldChar}
-	q \equiv 1 \mod 2n.
-\end{equation}
-
-%- Finish product-to-convolution-to transform applications
-%- Align column width
-%- Copy to big-picture document.
-
-\bibliographystyle{acm}
-\bibliography{\refsPrefix/refs}
-%\bibliography{\refsHomePrefix/refs}
-
-\end{document}
